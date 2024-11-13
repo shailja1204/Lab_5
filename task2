@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    double amount, discount = 0.0, finalAmount;
+
+    // Prompt user to enter the amount spent
+    printf("Enter the amount spent: ");
+    scanf("%lf", &amount);
+
+    // Apply discounts based on amount thresholds
+    if (amount >= 500) {
+        discount = amount * 0.15;  // 10% + additional 5%
+        printf("15%% total discount applied: $%.2lf\n", discount);
+    }
+    else if (amount >= 100) {
+        discount = amount * 0.10;  // Only 10% discount
+        printf("10%% discount applied: $%.2lf\n", discount);
+    }
+    else {
+        printf("No discount applied.\n");
+    }
+
+    // Calculate and display the final amount to be paid
+    finalAmount = amount - discount;
+    printf("Total discount: $%.2lf\n", discount);
+    printf("Final amount to be paid: $%.2lf\n", finalAmount);
+
+    return 0;
+}
